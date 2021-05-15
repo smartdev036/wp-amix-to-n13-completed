@@ -1,0 +1,54 @@
+.page-template-form-submit {
+  .thank-you {
+    text-align: center;
+    padding: 170px 0;
+    @include mq("tablet") {
+      padding: 200px 0;
+    }
+    @include mq("desktop") {
+      padding: 240px 0;
+    }
+    h2 {
+      margin-bottom: 21px;
+      @include mq("tablet") {
+        margin-bottom: 35px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 50px;
+      }
+    }
+    p {
+      margin: auto;
+      max-width: 920px;
+    }
+  }
+  hr {
+    margin: 0;
+  }
+  h5 {
+    padding: 25px 0;
+    @include mq("tablet") {
+      padding: 30px 0;
+    }
+    @include mq("desktop") {
+      padding: 50px 0;
+    }
+  }
+  .social-items {
+    margin-bottom: 85px;
+    display: flex;
+    align-items: center;
+    @include mq("tablet") {
+      margin-bottom: 150px;
+    }
+    @include mq("desktop") {
+      margin-bottom: 260px;
+    }
+    .social-item {
+      a {
+        margin-right: 20px;
+        display: block;
+      }
+    }
+  }
+}

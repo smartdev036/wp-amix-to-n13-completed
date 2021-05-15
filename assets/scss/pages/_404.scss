@@ -1,0 +1,40 @@
+.error404 {
+  main {
+    text-align: center;
+  }
+  .page-title {
+    margin: auto;
+    padding: 30vw 0;
+    text-align: center;
+    color: $grey;
+    max-width: 300px;
+    @include heading6();
+    @include mq("tablet") {
+      padding: 20vw 0;
+      max-width: 400px;
+    }
+    @include mq("desktop") {
+      padding: 15vw 0;
+      max-width: 540px;
+    }
+    @include mq("desktop-ultra") {
+      max-width: 600px;
+    }
+  }
+  .btn-link {
+    display: inline-flex;
+    margin: auto;
+    align-items: center;
+    svg {
+      margin-right: 20px;
+      margin-left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      color: $primary;
+      svg {
+        transform: translateX(-10px);
+      }
+    }
+  }
+}

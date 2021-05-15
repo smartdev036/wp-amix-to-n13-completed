@@ -1,0 +1,258 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common parts in all application
+// -----------------------------------------------------------------------------
+// Custom Color Classes
+.text-primary {
+  color: $primary;
+}
+.bg-primary {
+  background-color: $primary;
+}
+.text-secondary {
+  color: $secondary;
+}
+.bg-secondary {
+  background-color: $secondary;
+}
+// Custom Container
+.container {
+  margin: auto;
+  padding: 0 30px;
+  @include mq("desktop-wide") {
+    padding: 0 20px;
+    max-width: 1720px;
+  }
+}
+
+.container-fluid {
+  margin: auto;
+  padding: 0 20px;
+  width: 100%;
+  @include mq("desktop") {
+    padding: 0 60px;
+  }
+  @include mq("desktop-ultra") {
+    padding: 0 120px;
+  }
+}
+
+section {
+  max-width: 100vw;
+  // overflow-x: hidden;
+  .container {
+    @include mq("desktop") {
+      max-width: 1340px;
+    }
+  }
+}
+
+.background-element {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+// Loading Screen
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
+  pointer-events: none;
+  background-color: $primary;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+}
+
+// CURSOR
+.cursor {
+  display: none;
+  position: fixed;
+  background-color: $primary;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) background;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: scale(1);
+  &.active {
+    background-color: $secondary;
+    opacity: 1;
+    transform: scale(0);
+  }
+  &.menu-active {
+    opacity: 1;
+    transform: scale(0);
+  }
+  &.primary {
+    background-color: $primary !important;
+  }
+  &.white {
+    background-color: $white !important;
+  }
+  &.hovered {
+    opacity: 1;
+  }
+  @include mq("tablet") {
+    display: block;
+  }
+}
+.cursor-follower {
+  display: none;
+  position: fixed;
+  border: 1px solid $primary;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) background,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) border-color;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(2px, 2px);
+  overflow: hidden;
+  &.active {
+    opacity: 1;
+    transform: scale(3);
+    border-color: $secondary;
+  }
+  &.primary {
+    border-color: $primary !important;
+  }
+  &.white {
+    border-color: $white !important;
+  }
+  &.menu-active {
+    opacity: 1;
+    transform: scale(3);
+  }
+
+  &.hovered {
+    opacity: 1;
+  }
+  @include mq("tablet") {
+    display: block;
+  }
+}
+
+// Scrollbars
+.scrollbar-track {
+  width: 5px !important;
+  background: transparent !important;
+  .scrollbar-thumb {
+    width: 5px;
+    background: $primary;
+  }
+}
+
+// Loader
+.lds-roller {
+  margin: auto;
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  grid-column-start: 2;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $primary;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

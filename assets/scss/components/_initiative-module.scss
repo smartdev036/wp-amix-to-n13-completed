@@ -1,0 +1,82 @@
+.initiative-module {
+  &.purple {
+    h3 {
+      color: $purple;
+    }
+  }
+  &.blue {
+    h3 {
+      color: $dark_blue;
+    }
+  }
+  &:nth-child(odd) {
+    .content-module {
+      margin-left: auto;
+    }
+  }
+  .image-module {
+    margin-top: 32px;
+    @include mq("tablet") {
+      margin-top: 50px;
+    }
+    @include mq("desktop") {
+      margin-top: 70px;
+    }
+    @include mq("desktop-ultra") {
+      margin-top: 96px;
+    }
+  }
+  .content-module {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+    @include mq("tablet") {
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
+    @include mq("desktop") {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      max-width: 50%;
+    }
+    @include mq("desktop-ultra") {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    &__left {
+      margin-right: 40px;
+      @include mq("desktop") {
+        margin-right: 60px;
+      }
+      .avatar {
+        display: none;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #c4c4c4;
+        @include mq("desktop") {
+          width: 130px;
+          height: 130px;
+        }
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    &__right {
+      hr {
+        margin: 29px 0 23px;
+        @include mq("desktop") {
+          margin: 36px 0 59px;
+        }
+      }
+      p {
+        margin-bottom: 20px;
+        @include mq("desktop") {
+          margin-bottom: 36px;
+        }
+      }
+    }
+  }
+}

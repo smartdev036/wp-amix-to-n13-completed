@@ -1,0 +1,204 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the news page.
+// -----------------------------------------------------------------------------
+.post-type-archive-news {
+  #featured-news {
+    margin: 50px 0;
+    @include mq("tablet") {
+      margin: 100px 0;
+    }
+    h3 {
+      margin-bottom: 26px;
+      @include mq("tablet") {
+        margin-bottom: 50px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 84px;
+      }
+    }
+    .news-title {
+      margin-bottom: 8px;
+      @include mq("desktop") {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  #news {
+    margin-bottom: 200px;
+    .news-controls {
+      margin-bottom: 40px;
+      @include mq("desktop") {
+        margin-bottom: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #search-form {
+        margin-bottom: 30px;
+        max-width: 100%;
+        width: 100%;
+        border-bottom: 1px solid $secondary;
+        @include mq("tablet") {
+          max-width: 40%;
+          margin-bottom: 0;
+        }
+        @include mq("desktop") {
+          max-width: 540px;
+        }
+        .form-control {
+          display: flex;
+          align-items: center;
+          .icon-search {
+            width: 15px;
+            height: 30px;
+            @include mq("tablet") {
+              width: 30px;
+              height: auto;
+            }
+            flex-shrink: 0;
+            transition: transform 0.3s ease-in-out;
+            will-change: transform;
+            svg {
+              max-width: 100%;
+              path,
+              circle {
+                transition: stroke 0.3s ease-in-out;
+                will-change: stroke;
+              }
+            }
+          }
+          input {
+            border: none;
+            padding: 7px 11px;
+            order: 1;
+            font-family: "Gotham";
+            font-weight: 400;
+            @include mq("desktop") {
+              padding: 16px 22px;
+            }
+            @include bodyText(6);
+            &::placeholder {
+              @include bodyText(6);
+            }
+          }
+          input:focus + .icon-search {
+            transform: rotate(45deg) scale(1);
+          }
+          input:focus + .icon-search svg circle,
+          input:focus + .icon-search svg path {
+            stroke: $primary;
+          }
+        }
+      }
+      .categories-filter {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        @include mq("tablet") {
+          margin-top: 30px;
+          align-items: center;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        @include mq("desktop") {
+          margin-top: 0;
+          margin-left: auto;
+          max-width: calc(60% - 70px);
+        }
+        @include mq("desktop-ultra") {
+          max-width: calc(60% - 140px);
+        }
+        .btn-category-filter {
+          margin-bottom: 10px;
+          @include captionText("large");
+          color: $secondary;
+          padding: 0 15px;
+          border-left: 1px solid $secondary;
+          &:hover {
+            color: $primary;
+          }
+          &.active {
+            color: $primary;
+            border-color: $primary;
+          }
+          @include mq("tablet") {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .searched-news {
+      margin-bottom: 30px;
+      @include mq("tablet") {
+        margin-bottom: 0;
+        display: grid;
+        gap: 100px 30px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .single-news {
+        position: relative;
+        display: flex;
+        padding-bottom: 70px;
+        flex-direction: column;
+        @include mq("tablet", "max") {
+          max-width: 90%;
+          margin-left: auto;
+          padding-bottom: 20px;
+        }
+        &__img {
+          width: 100%;
+          height: 44vw;
+          order: 1;
+          @include mq("tablet") {
+            height: 16.8vw;
+            order: 0;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        &__category {
+          margin: 45px 0 17px;
+          @include captionText("large");
+          @include mq("tablet", "max") {
+            margin: 23px 0 7px -10%;
+            position: relative;
+            &::after {
+              margin-left: 20px;
+              position: absolute;
+              content: "";
+              top: 50%;
+              width: 100vw;
+              height: 1px;
+              background-color: #695e4a;
+            }
+          }
+        }
+        &__title {
+          margin-bottom: 50px;
+          color: $secondary;
+          @include mq("tablet", "max") {
+            margin-bottom: 23px;
+            max-width: calc(100% - 60px);
+          }
+        }
+        &__link {
+          @include mq("tablet", "max") {
+            position: absolute;
+            right: 0;
+            top: 57px;
+            font-size: 0;
+            z-index: 10;
+            svg {
+              width: 29.39px;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

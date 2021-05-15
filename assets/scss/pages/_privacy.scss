@@ -1,0 +1,45 @@
+.privacy-policy {
+  section {
+    padding: 50px 0 110px;
+    @include mq("tablet") {
+      padding: 80px 0 200px;
+    }
+    @include mq("desktop") {
+      padding: 110px 0 250px;
+    }
+    .container-fluid {
+      width: 90%;
+      margin-left: auto;
+      @include mq("tablet") {
+        display: flex;
+        justify-content: space-between;
+      }
+      @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+        flex-wrap: wrap;
+      }
+    }
+    .title {
+      margin-bottom: 20px;
+      @include mq("tablet") {
+        margin-right: 50px;
+        max-width: 540px;
+        flex-shrink: 0;
+      }
+    }
+    .content {
+      max-width: 920px;
+      h4 {
+        @include bodyText(1);
+        margin: 50px 0 25px;
+        @include mq("desktop") {
+          margin: 50px 0 30px;
+        }
+      }
+      a {
+        color: $secondary;
+        line-break: anywhere;
+        text-decoration: underline;
+      }
+    }
+  }
+}

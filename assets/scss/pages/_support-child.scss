@@ -1,0 +1,30 @@
+.page-support-child {
+  .page-info {
+    @include mq("tablet", "max") {
+      padding-bottom: 0;
+    }
+  }
+  .text-cta-module {
+    padding: 60px 0;
+    @include mq("tablet") {
+      padding: 140px 0;
+    }
+    @include mq("desktop") {
+      padding: 190px 0;
+    }
+  }
+  .slider-section {
+    padding: 60px 0;
+    @include mq("tablet") {
+      padding: 120px 0;
+    }
+    @include mq("desktop") {
+      padding: 160px 0 200px;
+    }
+  }
+  #news {
+    @include mq("desktop") {
+      padding-top: 200px;
+    }
+  }
+}

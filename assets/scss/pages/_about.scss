@@ -1,0 +1,337 @@
+.page-template-about {
+  section {
+    padding: 50px 0;
+    @include mq("tablet") {
+      padding: 80px 0;
+    }
+    @include mq("desktop") {
+      padding: 120px 0;
+    }
+    @include mq("desktop-ultra") {
+      padding: 150px 0;
+    }
+    &.hero-video {
+      padding: 0;
+    }
+    .section-title {
+      margin-bottom: 20px;
+      @include mq("tablet") {
+        margin-bottom: 50px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 80px;
+      }
+      @include mq("desktop-ultra") {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+
+#we-believe {
+  padding: 70px 0;
+  @include mq("tablet") {
+    padding: 100px 0;
+  }
+  @include mq("desktop") {
+    padding: 120px 0;
+  }
+  @include mq("desktop-ultra") {
+    padding: 180px 0;
+  }
+}
+
+#about-foundation {
+  padding-bottom: 10px;
+  @include mq("desktop") {
+    padding-bottom: 60px;
+  }
+  .content {
+    margin-top: 30px;
+    margin-left: auto;
+    padding-top: 24px;
+    max-width: 75%;
+    border-top: 1px solid $secondary;
+    @include mq("tablet") {
+      margin-top: 50px;
+    }
+    @include mq("desktop") {
+      padding-top: 50px;
+      margin-top: 100px;
+      max-width: 920px;
+    }
+    @include mq("desktop-ultra") {
+      margin-top: 140px;
+    }
+  }
+}
+
+#our-commitment {
+  .cta-text {
+    a {
+      color: $secondary;
+      text-decoration: underline;
+    }
+  }
+}
+
+#our-values {
+  .section-title {
+    padding-right: 20px;
+  }
+  .our-values {
+    width: 100%;
+  }
+  .our-value {
+    max-width: 320px;
+    @include mq("tablet") {
+      max-width: 400px;
+    }
+    @include mq("desktop") {
+      max-width: 500px;
+    }
+    @include mq("desktop-ultra") {
+      max-width: 730px;
+    }
+    &__image {
+      margin-bottom: 24px;
+      width: 100%;
+      height: 192px;
+      @include mq("tablet") {
+        margin-bottom: 30px;
+        height: 240px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 40px;
+        height: 300px;
+      }
+      @include mq("desktop-ultra") {
+        margin-bottom: 55px;
+        height: 435px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__title {
+      margin-bottom: 18px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include mq("tablet") {
+        margin-bottom: 20px;
+      }
+    }
+    &__desc {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+#our-team {
+  .slider-wrapper {
+    margin-bottom: 30px;
+    @include mq("desktop") {
+      margin-bottom: 50px;
+    }
+    .text-caption-lg {
+      float: left;
+      margin-right: 50px;
+    }
+  }
+  .person {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    // border: 1px solid $secondary;
+    overflow: hidden;
+    // transition: transform 0.5s;
+    // transform-origin: center right;
+    // transform-style: preserve-3d;
+    &:hover {
+      // transform: translateX(-100%) rotateY(-180deg);
+      .person-back {
+        transform: translateY(-100%);
+      }
+    }
+    &.no-image {
+      border: 1px solid $secondary;
+      .person-info {
+        display: flex;
+        height: 100%;
+        background-color: transparent;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .person-name {
+        color: $secondary;
+      }
+      .person-role {
+        color: $secondary;
+        font-family: "Gotham";
+        @include bodyText(6);
+      }
+    }
+    &-wrapper {
+      width: 210px;
+      height: 360px;
+      // perspective: 400px;
+      @include mq("tablet") {
+        width: 300px;
+        height: 480px;
+      }
+      @include mq("desktop") {
+        width: 350px;
+        height: 600px;
+      }
+    }
+    // &-front,
+    // &-back {
+    //   position: absolute;
+    //   height: 100%;
+    //   width: 100%;
+    // }
+    // &-front {
+    //   backface-visibility: hidden;
+    // }
+    &-front {
+      height: 360px;
+      @include mq("tablet") {
+        height: 480px;
+      }
+      @include mq("desktop") {
+        height: 600px;
+      }
+    }
+    &-back {
+      display: flex;
+      height: 360px;
+      padding: 13px 20px;
+      background-color: $secondary;
+      color: $white;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease-in-out;
+      z-index: 1;
+      @include mq("tablet") {
+        padding: 20px;
+        height: 480px;
+      }
+      @include mq("desktop") {
+        padding: 30px 20px;
+        height: 600px;
+      }
+      // transform: rotateY(180deg);
+    }
+    &-image {
+      width: 100%;
+      height: 300px;
+      @include mq("tablet") {
+        height: 400px;
+      }
+      @include mq("desktop") {
+        height: 500px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-info {
+      padding: 13px 20px;
+      height: 60px;
+      background-color: $secondary;
+      color: white;
+      @include mq("tablet") {
+        padding: 20px;
+        height: 80px;
+      }
+      @include mq("desktop") {
+        padding: 18px 24px;
+        height: 100px;
+      }
+    }
+    &-name {
+      @include bodyText(6);
+      text-transform: uppercase;
+    }
+    &-role {
+      font: 400 13px/18px "Avenir";
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include mq("desktop") {
+        font: 400 20px/28px "Avenir";
+      }
+    }
+    &-bio {
+      @include bodyText(6);
+    }
+    .btn-link {
+      color: #fff;
+    }
+  }
+}
+
+#annual-reports {
+  padding-top: 0;
+}
+
+#financials {
+  .section-title {
+    padding-right: 30px;
+  }
+  .financial img {
+    max-height: 170px;
+    @include mq("tablet") {
+      max-height: 280px;
+    }
+    @include mq("desktop") {
+      max-height: 400px;
+    }
+  }
+  .financial-controls {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid $secondary;
+    @include mq("tablet") {
+      margin-top: 40px;
+      padding-top: 40px;
+      display: flex;
+      align-items: center;
+    }
+    @include mq("desktop") {
+      margin-top: 50px;
+      padding-top: 50px;
+    }
+    .financial-years {
+      margin-top: 20px;
+      @include mq("tablet") {
+        margin-top: 0;
+        margin-left: 25px;
+      }
+      @include mq("desktop") {
+        margin-left: 50px;
+      }
+      .year-link {
+        @include buttonText();
+        padding: 0 30px;
+        color: $secondary;
+        text-decoration: underline;
+        @include mq("tablet", "max") {
+          padding: 0 10px;
+          &:first-child {
+            padding-left: 0;
+          }
+        }
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

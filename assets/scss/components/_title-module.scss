@@ -1,0 +1,7 @@
+.title-module {
+  width: 90%;
+  @include mq("tablet") {
+    width: 70%;
+    max-width: 1300px;
+  }
+}

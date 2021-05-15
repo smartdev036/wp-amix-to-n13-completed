@@ -1,0 +1,72 @@
+.btn {
+  display: inline-block;
+  padding: 3px 40px;
+  border-radius: 0;
+  font-size: 12px;
+  font-family: "Gotham", sans-serif;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  @include mq("tablet") {
+    padding: 15px 60px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+.btn-primary {
+  color: $white;
+  background-color: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    color: $primary;
+    background-color: transparent;
+  }
+}
+.btn-secondary {
+  color: $secondary;
+  background-color: transparent;
+  border: 1px solid $secondary;
+  &:hover {
+    color: $white;
+    background-color: $secondary;
+  }
+}
+.btn-link {
+  display: flex;
+  align-items: center;
+  @include buttonText();
+  color: $secondary;
+  &:visited {
+    color: $grey;
+  }
+  &:hover {
+    .text {
+      color: $primary;
+    }
+    svg {
+      margin-left: 30px;
+      path {
+        stroke: $primary;
+      }
+    }
+  }
+  .text {
+    transition: color 0.3s ease-in-out;
+  }
+  svg {
+    margin-left: 20px;
+    flex-shrink: 0;
+    transition: margin 0.3s ease-in-out;
+    path {
+      transition: stroke 0.3s ease-in-out;
+    }
+  }
+  @include mq("tablet", "max") {
+    svg {
+      max-width: 30px;
+    }
+  }
+}

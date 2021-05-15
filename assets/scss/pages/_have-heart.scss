@@ -1,0 +1,17 @@
+.page-have-a-heart {
+  .text-cta-module {
+    padding-top: 230px;
+    padding-bottom: 243px;
+  }
+  .slider-section {
+    .slide__image {
+      height: 320px;
+      @include mq("tablet") {
+        height: 400px;
+      }
+      @include mq("desktop") {
+        height: 550px;
+      }
+    }
+  }
+}

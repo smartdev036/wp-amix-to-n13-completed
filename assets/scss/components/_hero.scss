@@ -1,0 +1,34 @@
+.hero {
+  position: relative;
+  padding: 100px 0 120px;
+  text-align: center;
+  @include mq("desktop") {
+    padding: 120px 0 150px;
+    height: calc(100vh - 105px);
+    min-height: 500px;
+  }
+  @include mq("desktop-ultra") {
+    height: calc(100vh - 140px);
+    min-height: 600px;
+  }
+  .btn-donate {
+    display: inline-block;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .btn-scroll-link {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    path {
+      transition: stroke 0.3s ease-in-out;
+    }
+    &:hover {
+      animation: bounceUpDown 1s ease-in-out 0s infinite alternate forwards;
+      path {
+        stroke: $primary;
+      }
+    }
+  }
+}

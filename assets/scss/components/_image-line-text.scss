@@ -1,0 +1,24 @@
+.image-line-text-module {
+  padding-bottom: 10px;
+  @include mq("desktop") {
+    padding-bottom: 60px;
+  }
+  .content {
+    margin-top: 30px;
+    margin-left: auto;
+    padding-top: 24px;
+    max-width: 75%;
+    border-top: 1px solid $secondary;
+    @include mq("tablet") {
+      margin-top: 50px;
+    }
+    @include mq("desktop") {
+      padding-top: 50px;
+      margin-top: 100px;
+      max-width: 920px;
+    }
+    @include mq("desktop-ultra") {
+      margin-top: 140px;
+    }
+  }
+}

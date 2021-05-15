@@ -1,0 +1,111 @@
+#team-member-profile {
+  padding: 50px 0;
+  @include mq("tablet") {
+    padding: 80px 0;
+  }
+  @include mq("desktop-ultra") {
+    padding: 130px 0;
+  }
+  .back-btn-wrapper {
+    margin-bottom: 30px;
+    a {
+      @include buttonText();
+      svg {
+        margin-right: 10px;
+        transition: transform 0.3s ease-in-out;
+        will-change: transform;
+        path {
+          transition: stroke 0.3s ease-in-out;
+        }
+      }
+      .text {
+        color: $secondary;
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+      }
+      &:hover {
+        svg {
+          transform: translateX(-10px);
+          path {
+            stroke: $primary;
+          }
+        }
+        .text {
+          color: $primary;
+        }
+      }
+    }
+  }
+  .department-wrapper {
+    overflow: hidden;
+  }
+  .department {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: calc(100% + 15px);
+      width: 100vw;
+      height: 1px;
+      background-color: $secondary;
+      @include mq("tablet") {
+        left: calc(100% + 30px);
+      }
+    }
+  }
+  .profile {
+    &-content {
+      margin-left: auto;
+      max-width: 90%;
+      @include mq("tablet") {
+        display: flex;
+        max-width: 100%;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+    }
+    &-left {
+      @include mq("tablet") {
+        margin-right: 50px;
+        max-width: 400px;
+        flex-shrink: 0;
+      }
+      @include mq("desktop") {
+        max-width: 480px;
+      }
+      @include mq("desktop-ultra") {
+        max-width: 540px;
+      }
+    }
+    &-right {
+      max-width: 920px;
+      p {
+        margin-bottom: 25px;
+        @include mq("desktop-ultra") {
+          margin-bottom: 50px;
+        }
+      }
+    }
+    &-name {
+      margin-bottom: 13px;
+      @include mq("tablet") {
+        margin-bottom: 20px;
+      }
+      @include mq("desktop-ultra") {
+      }
+    }
+    &-role {
+      @include bodyText(1);
+      margin-bottom: 26px;
+      @include mq("desktop-ultra") {
+        margin-bottom: 50px;
+      }
+    }
+    &-image {
+      margin-bottom: 50px;
+    }
+  }
+}

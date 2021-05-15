@@ -1,0 +1,51 @@
+.title-image-content-module {
+  h4 {
+    margin-bottom: 30px;
+    @include mq("tablet") {
+      width: 70%;
+    }
+    @include mq("desktop") {
+      margin-bottom: 50px;
+    }
+  }
+  .content-wrapper {
+    max-width: 90%;
+    margin-left: auto;
+    @include mq("tablet") {
+      max-width: 100%;
+    }
+  }
+  .content {
+    padding: 30px 0 50px;
+    @include mq("tablet") {
+      display: flex;
+      align-items: flex-start;
+    }
+    @include mq("desktop") {
+      padding: 70px 0 150px;
+    }
+    &-image {
+      flex-shrink: 0;
+      max-width: 100%;
+      @include mq("tablet") {
+        width: 400px;
+      }
+      @include mq("desktop") {
+        width: 600px;
+      }
+      @include mq("desktop-ultra") {
+        width: 840px;
+      }
+    }
+    &-text {
+      margin-top: 20px;
+      @include mq("tablet") {
+        margin-top: 0;
+        margin-left: 50px;
+      }
+      @include mq("desktop-ultra") {
+        margin-left: 110px;
+      }
+    }
+  }
+}

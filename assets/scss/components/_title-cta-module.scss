@@ -1,0 +1,16 @@
+.title-cta-module {
+  hr {
+    border: none;
+    border-top: 1px solid $secondary;
+  }
+  h5 {
+    margin: 23px 0;
+    @include mq("desktop") {
+      margin: 54px 0 40px;
+    }
+    a {
+      color: $secondary;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.page-template-contact {
+  section {
+    .container-fluid {
+      @include mq("tablet") {
+        display: flex;
+      }
+    }
+    .section-left {
+      margin-left: auto;
+      margin-bottom: 15px;
+      width: 80%;
+      @include mq("tablet") {
+        width: auto;
+        flex-shrink: 0;
+        margin-left: 0;
+        margin-right: 30px;
+        margin-bottom: 0;
+      }
+      @include mq("desktop") {
+        margin-right: 60px;
+      }
+    }
+    .section-right {
+      margin-left: auto;
+      width: 80%;
+      @include mq("tablet") {
+        width: 100%;
+        margin-left: auto;
+      }
+      @include mq("desktop") {
+        max-width: 920px;
+      }
+    }
+  }
+  #connected {
+    padding: 54px 0;
+    @include mq("tablet") {
+      padding: 80px 0;
+    }
+    @include mq("desktop") {
+      padding: 120px 0;
+    }
+    hr {
+      margin-top: 0;
+      margin-bottom: 20px;
+      @include mq("tablet") {
+        margin-bottom: 40px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 66px;
+      }
+    }
+    .connected-item {
+      margin-bottom: 25px;
+      @include mq("tablet") {
+        display: grid;
+        grid-template-columns: 150px auto;
+        gap: 20px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 60px;
+        grid-template-columns: 350px auto;
+        gap: 30px;
+      }
+      .label {
+        margin-bottom: 25px;
+        margin-right: 20px;
+        max-width: 350px;
+        @include bodyText(3);
+      }
+      .content {
+        max-width: 290px;
+        a {
+          color: $grey;
+        }
+      }
+      .social-links {
+        display: flex;
+        align-items: center;
+      }
+      .social-link {
+        margin-right: 20px;
+      }
+    }
+  }
+  #contact-us {
+    margin-bottom: 94px;
+    @include mq("desktop") {
+      margin-bottom: 200px;
+    }
+    @include mq("desktop-ultra") {
+      margin-bottom: 260px;
+    }
+    .form-row {
+      margin: 0 -15px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include mq("tablet") {
+        margin-bottom: 20px;
+      }
+      @include mq("desktop") {
+        flex-wrap: nowrap;
+        margin-bottom: 40px;
+      }
+      @include mq("desktop-ultra") {
+        margin-bottom: 66px;
+      }
+    }
+    .form-group {
+      padding: 0 15px;
+      width: 100%;
+      &.col-half {
+        @include mq("tablet") {
+          width: 50%;
+        }
+      }
+      .form-control {
+        width: 100%;
+        padding: 10px 0;
+        border: 0;
+        border-bottom: 1px solid $grey;
+        border-radius: 0;
+        @include bodyText(4);
+        font-family: "Gotham", sans-serif;
+        @include mq("tablet-wide") {
+          @include bodyText(6);
+        }
+      }
+    }
+    .btn-submit {
+      margin-top: 30px;
+      -webkit-appearance: none;
+    }
+  }
+  .wpcf7-not-valid-tip {
+    color: $primary;
+    @include bodyText(6);
+  }
+}

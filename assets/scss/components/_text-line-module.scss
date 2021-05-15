@@ -1,0 +1,16 @@
+.text-line-module {
+  overflow: hidden;
+  .text {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      margin-left: 20px;
+      transform: translateY(-50%);
+      width: 100vw;
+      height: 1px;
+      background: $secondary;
+    }
+  }
+}

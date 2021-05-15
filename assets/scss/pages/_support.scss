@@ -1,0 +1,23 @@
+.page-template-support {
+  .title-module {
+    margin: 70px 0 30px;
+    @include mq("tablet") {
+      margin: 100px 0 40px;
+    }
+    @include mq("desktop") {
+      margin: 140px 0 50px;
+    }
+    @include mq("desktop-ultra") {
+      margin: 180px 0 60px;
+    }
+  }
+  .title-cta-module {
+    margin: 80px 0;
+    @include mq("desktop") {
+      margin: 130px 0;
+    }
+    @include mq("desktop-ultra") {
+      margin: 200px 0 270px;
+    }
+  }
+}

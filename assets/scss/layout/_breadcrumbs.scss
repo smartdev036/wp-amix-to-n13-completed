@@ -1,0 +1,29 @@
+.breadcrumbs {
+  // display: flex;
+  margin: 50px 0 20px;
+  padding-left: 0;
+  // align-items: center;
+  @include captionText();
+  @include mq("tablet") {
+    margin: 80px 0 30px;
+  }
+  @include mq("desktop") {
+    margin: 116px 0 50px;
+  }
+  a {
+    color: $secondary;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $primary;
+    }
+  }
+  li {
+    position: relative;
+    padding-right: 30px;
+    &::after {
+    }
+    a {
+      @include captionText();
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.title-text-module {
+  margin-top: 20px;
+  margin-left: auto;
+  max-width: 90%;
+  @include mq("tablet") {
+    display: flex;
+    margin-top: 50px;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  @include mq("desktop") {
+    margin-top: 80px;
+  }
+  @include mq("desktop-ultra") {
+    margin-top: 120px;
+  }
+  .title {
+    @include mq("tablet") {
+      max-width: clamp(250px, 30%, 400px);
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    @include mq("desktop") {
+      max-width: 530px;
+      margin-right: 50px;
+      width: 100%;
+    }
+  }
+  .content {
+    @include mq("desktop") {
+      margin-left: auto;
+      max-width: 920px;
+    }
+    hr {
+      margin-bottom: 20px;
+      @include mq("desktop") {
+        margin-bottom: 50px;
+      }
+    }
+    a {
+      color: $secondary;
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
+      list-style: disc;
+      li {
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.map-module {
+  .section-title {
+    margin-bottom: 30px;
+    @include mq("desktop") {
+      margin-bottom: 63px;
+    }
+  }
+  .map {
+    cursor: pointer;
+    @include mq("tablet", "max") {
+      min-height: 300px;
+    }
+    iframe {
+      pointer-events: none;
+    }
+  }
+}

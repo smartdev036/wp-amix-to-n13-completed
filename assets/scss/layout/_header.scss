@@ -1,0 +1,292 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+// Header styles
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 30px 0;
+  background-color: $white;
+  border-bottom: 1px solid $secondary;
+  z-index: $z-header;
+  transition: all 0.3s ease-in-out;
+  &.hide {
+    transform: translateY(-200px);
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-link {
+    flex-shrink: 0;
+    line-height: 0;
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      &.desktop {
+        display: none;
+      }
+      @include mq("desktop") {
+        max-width: 250px;
+        &.mobile {
+          display: none;
+        }
+        &.desktop {
+          display: block;
+        }
+      }
+      @include mq("desktop-ultra") {
+        max-width: none;
+      }
+    }
+    cursor: pointer;
+  }
+  .hamburger-btn {
+    display: flex;
+    margin-right: 100px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    @include mq("tablet") {
+      margin-right: 150px;
+    }
+    @include mq("desktop") {
+      display: none;
+    }
+    &:hover {
+      span {
+        background-color: $primary;
+      }
+    }
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $secondary;
+      transition: background 0.3s ease-in-out;
+    }
+  }
+  .hamburger-close-btn {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    padding: 0;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    path {
+      transition: stroke 0.3s ease-in-out;
+    }
+    @include mq("desktop") {
+      display: none;
+    }
+    &:hover {
+      path {
+        stroke: $primary;
+      }
+    }
+  }
+  .nav-menu {
+    transition: all 0.3s ease-in-out;
+    @include mq("desktop", "max") {
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      width: 100vw;
+      height: 100vh;
+      background-color: $white;
+      z-index: $z-mobile-menu;
+      overflow-y: auto;
+    }
+    &__inner {
+      position: relative;
+    }
+  }
+  .menu-items {
+    position: absolute;
+    top: 130px;
+    padding: 0 20px;
+    width: 100%;
+    @include mq("desktop") {
+      padding: 0;
+      margin-left: auto;
+      margin-right: 100px;
+      position: static;
+      display: flex;
+      width: auto;
+      align-items: center;
+    }
+    @include mq("desktop-ultra") {
+      margin-right: 180px;
+    }
+    .menu-item {
+      border-top: 1px solid $secondary;
+      @include mq("desktop") {
+        padding: 0 20px;
+        border-top: none;
+      }
+      @include mq("desktop-wide") {
+        padding: 0 30px;
+      }
+      &.current-page-ancestor {
+        > a {
+          font-weight: 700;
+        }
+      }
+      &.current-menu-item {
+        &::after {
+          border-color: $primary !important;
+        }
+        > a {
+          font-weight: 700;
+          color: $primary;
+        }
+      }
+      a {
+        padding: 23px 0;
+        display: block;
+        position: relative;
+        width: 100%;
+        white-space: nowrap;
+        @include buttonText();
+        letter-spacing: 0.3px;
+        color: $secondary;
+        @include mq("tablet") {
+          max-width: auto;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+        }
+        @include mq("desktop") {
+          padding: 0;
+          display: block;
+          width: auto;
+        }
+      }
+      &.menu-item-has-children {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        > a {
+          max-width: 100px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          top: 29px;
+          right: 10px;
+          width: 10px;
+          height: 10px;
+          border-right: 2px solid $secondary;
+          border-bottom: 2px solid $secondary;
+          transform: rotate(-45deg);
+          transition: all 0.3s ease-in-out;
+          @include mq("desktop") {
+            top: 7px;
+            right: 3px;
+          }
+        }
+        .dropdown-menu {
+          display: none;
+          padding-left: 55px;
+          padding-right: 0;
+          position: static;
+          background-color: $white;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+          @include mq("desktop") {
+            display: block;
+            position: absolute;
+            top: 70px;
+            padding: 0;
+            border: 1px solid $secondary;
+          }
+          @include mq("desktop-ultra") {
+            top: 81px;
+          }
+          .menu-item {
+            @include mq("desktop") {
+              border-bottom: 1px solid $secondary;
+              padding: 20px 30px;
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+        @mixin show_dropdown_menu {
+          overflow: visible;
+          &::after {
+            top: 27px;
+            border-color: $primary;
+            transform: rotate(45deg);
+            @include mq("desktop") {
+              top: 5px;
+            }
+          }
+          .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        &.hover {
+          @include mq("desktop") {
+            @include show_dropdown_menu();
+            &::after {
+              border-color: $secondary;
+            }
+          }
+        }
+        &.show {
+          @include mq("desktop", "max") {
+            @include show_dropdown_menu();
+          }
+        }
+        > a {
+          @include mq("desktop") {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+.btn.sticky-donate-link {
+  padding: 3px 30px;
+  position: fixed;
+  top: 34px;
+  right: -10px;
+  text-align: left;
+  z-index: $z-donation-btn;
+  transition: all 0.3s ease-in-out;
+  &.hide {
+    transform: translateY(-200px);
+  }
+  &:hover {
+    background-color: $primary !important;
+    color: #fff !important;
+    right: 0;
+  }
+  @include mq("tablet") {
+    top: 34px;
+  }
+  @include mq("desktop") {
+    top: 29px;
+    padding: 16px 30px 16px 20px;
+  }
+  @include mq("desktop-ultra") {
+    top: 40px;
+    width: 222px;
+  }
+}

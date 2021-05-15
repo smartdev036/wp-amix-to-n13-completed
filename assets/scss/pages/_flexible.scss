@@ -1,0 +1,176 @@
+.page-template-flexible {
+  section {
+    padding: 30px 0;
+    @include mq("desktop") {
+      padding: 50px 0;
+    }
+    &.hero-video {
+      padding: 0;
+    }
+    .title-module {
+      padding: 20px 0;
+      @include mq("desktop") {
+        padding: 50px 0;
+      }
+    }
+    .title-image-content-module {
+      padding: 20px 0;
+      &.right {
+        .content-image {
+          order: 1;
+        }
+        .content-text {
+          margin-left: 0;
+          margin-right: 20px;
+          @include mq("tablet") {
+            margin-right: 50px;
+          }
+        }
+      }
+      @include mq("desktop") {
+        padding: 50px 0;
+      }
+      .content {
+        padding: 30px 0;
+        @include mq("tablet") {
+          padding: 40px 0;
+        }
+        @include mq("desktop-wide") {
+          padding: 70px 0;
+        }
+        .btn {
+          margin-top: 30px;
+          @include mq("desktop") {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+  .slider-section {
+    .section-title {
+      max-width: calc(100% - 30px);
+      margin-bottom: 50px;
+      @include mq("tablet") {
+        max-width: 80%;
+      }
+      @include mq("desktop") {
+        max-width: calc(100% - 60px);
+      }
+      @include mq("desktop-ultra") {
+        max-width: calc(100% - 120px);
+      }
+    }
+    .slide {
+      display: grid;
+      grid-template-rows: 180px auto auto;
+      grid-row-gap: 25px;
+      max-width: 320px;
+      @include mq("tablet") {
+        grid-template-rows: 300px auto auto;
+        max-width: 400px;
+      }
+      @include mq("desktop") {
+        grid-template-rows: 435px auto auto;
+        max-width: 500px;
+      }
+      @include mq("desktop-ultra") {
+        max-width: 730px;
+      }
+      &__image {
+        width: 100%;
+        height: 180px;
+        @include mq("tablet") {
+          height: 300px;
+        }
+        @include mq("desktop") {
+          padding-bottom: 25px;
+          height: 435px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      &__desc {
+        margin-bottom: 35px;
+      }
+    }
+  }
+  .title-cta-module,
+  #news {
+    padding: 40px 0;
+    @include mq("desktop") {
+      padding: 50px 0;
+    }
+  }
+  #news {
+    h3 {
+      margin-bottom: 50px;
+    }
+  }
+  .page-info {
+    max-width: 90%;
+    margin: 50px 0 80px auto;
+    @include mq("tablet") {
+      max-width: 100%;
+      margin: 80px 0 120px;
+    }
+    @include mq("desktop") {
+      margin: 110px 0 150px;
+    }
+    @include mq("desktop-ultra") {
+      margin: 150px 0 200px;
+    }
+    .container-fluid {
+      @include mq("tablet") {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+    }
+    &__left {
+      @include mq("tablet") {
+        max-width: 40%;
+      }
+      @include mq("desktop-ultra") {
+        max-width: 680px;
+      }
+      h3 {
+        margin-bottom: 11px;
+        @include mq("tablet") {
+          margin-bottom: 20px;
+        }
+        @include mq("desktop") {
+          margin-bottom: 38px;
+        }
+      }
+      p {
+        @include bodyText(1);
+      }
+    }
+    &__right {
+      margin-top: 25px;
+      @include mq("tablet") {
+        display: block;
+        margin-top: 0;
+        margin-left: 10px;
+        max-width: calc(60% - 10px);
+        flex-shrink: 0;
+      }
+      @include mq("desktop") {
+        margin-left: 20px;
+        max-width: calc(60% - 20px);
+      }
+      @include mq("desktop-ultra") {
+        margin-left: 30px;
+        max-width: 920px;
+      }
+    }
+  }
+}

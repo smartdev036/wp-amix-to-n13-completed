@@ -1,0 +1,121 @@
+.news-module {
+  .news {
+    &-category {
+      display: flex;
+      align-items: center;
+      .text {
+        @include captionText("large");
+        margin-right: 20px;
+        flex-shrink: 0;
+        text {
+          padding: 0 10px;
+          border-right: 1px solid $secondary;
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: $secondary;
+      }
+    }
+    &-content {
+      display: flex;
+      margin-bottom: 30px;
+      margin-left: auto;
+      padding: 30px 0;
+      max-width: 90%;
+      align-items: flex-start;
+      flex-direction: column;
+      @include mq("tablet") {
+        margin-bottom: 60px;
+        padding: 60px 0;
+        max-width: 100%;
+        flex-direction: row;
+      }
+      &__left {
+        width: 100%;
+        @include mq("tablet") {
+          width: 40%;
+        }
+      }
+      &__right {
+        margin-top: 20px;
+        width: 100%;
+        @include mq("tablet") {
+          margin-top: 0;
+          margin-left: 30px;
+          max-width: calc(60% - 30px);
+        }
+        @include mq("desktop") {
+          margin-left: 70px;
+          max-width: calc(60% - 70px);
+        }
+        @include mq("desktop-ultra") {
+          margin-left: 140px;
+          max-width: calc(60% - 140px);
+        }
+      }
+    }
+    &-title {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      color: $secondary;
+      &:hover {
+        h5 {
+          color: $primary;
+        }
+        svg {
+          transform: translateX(10px);
+          path {
+            stroke: $primary;
+          }
+        }
+      }
+      h5 {
+        margin-right: 30px;
+        transition: color 0.3s ease-in-out;
+      }
+      svg {
+        margin-top: 14px;
+        width: 29.39px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease-in-out;
+        @include mq("tablet") {
+          width: auto;
+          margin-top: 19px;
+        }
+        path {
+          transition: stroke 0.3s ease-in-out;
+        }
+      }
+    }
+    &-excerpt {
+      max-width: 500px;
+    }
+    &-image {
+      width: 100%;
+      height: 44vw;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include mq("tablet") {
+        height: 28.5vw;
+      }
+      @include mq("desktop-ultra") {
+        max-height: 550px;
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.page-template-donate {
+  #page-info {
+    position: relative;
+    padding: 105px 0 150px;
+    text-align: center;
+    @include mq("desktop") {
+      padding: 150px 0 200px;
+      height: calc(100vh - 105px);
+      min-height: 750px;
+    }
+    @include mq("desktop-ultra") {
+      padding: 255px 0 265px;
+      height: calc(100vh - 140px);
+      min-height: 900px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      @include mq("desktop") {
+        margin-bottom: 54px;
+      }
+    }
+    p {
+      @include mq("desktop") {
+        max-width: 920px;
+        margin: auto;
+      }
+    }
+    .btn-scroll-link {
+      position: absolute;
+      left: 50%;
+      bottom: 50px;
+      transform: translateX(-50%);
+      svg {
+        max-height: 30px;
+        @include mq("tablet") {
+          max-height: none;
+        }
+      }
+      path {
+        transition: stroke 0.3s ease-in-out;
+      }
+      &:hover {
+        animation: bounceUpDown 1s ease-in-out 0s infinite alternate forwards;
+        path {
+          stroke: $primary;
+        }
+      }
+    }
+  }
+  #donate {
+    .container {
+      @include mq("desktop") {
+        padding: 0 10px;
+      }
+    }
+    #bbox-msg-wrapper {
+      text-align: center;
+    }
+  }
+  .title-cta-module {
+    margin: 70px 0 80px;
+    @include mq("tablet") {
+      margin: 100px 0;
+    }
+    @include mq("desktop") {
+      margin: 150px 0;
+    }
+    @include mq("desktop-ultra") {
+      margin: 257px 0;
+    }
+  }
+}

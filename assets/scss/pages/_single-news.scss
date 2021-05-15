@@ -1,0 +1,188 @@
+.single-news {
+  .category {
+    @include mq("desktop") {
+      margin-bottom: 36px;
+    }
+  }
+  .news-page-content {
+    display: grid;
+    margin-top: 30px;
+    margin-left: auto;
+    grid-column-gap: 30px;
+    width: 90%;
+    @include mq("tablet") {
+      width: 100%;
+      grid-template-columns: 290px auto;
+    }
+    @include mq("desktop") {
+      margin-left: 0;
+      grid-template-columns: 28.2vw auto;
+    }
+    .news-title {
+      margin-bottom: 16px;
+      @include mq("tablet") {
+        margin-bottom: 25px;
+      }
+    }
+    .news-excert p {
+      margin-bottom: 28px;
+      @include bodyText(1);
+      @include mq("tablet") {
+        margin-bottom: 90px;
+      }
+    }
+    .social-share {
+      display: flex;
+      margin-bottom: 25px;
+      align-items: center;
+      .text {
+        min-width: 160px;
+        text-transform: uppercase;
+        @include captionText("large");
+      }
+      .addtoany_list {
+        display: flex;
+        align-items: center;
+        a {
+          padding: 0 10px;
+        }
+      }
+    }
+    .news-info {
+      .news-image {
+        margin: 30px 0 28px;
+        @include mq("tablet") {
+          display: none;
+        }
+      }
+    }
+    .content {
+      .image,
+      .text {
+        @include mq("desktop") {
+          max-width: 920px;
+          width: 80%;
+          margin-left: auto;
+        }
+      }
+      .image {
+        margin-bottom: 30px;
+        @include mq("desktop") {
+          margin-bottom: 60px;
+        }
+      }
+      .text {
+        p {
+          margin-bottom: 25px;
+          @include mq("desktop") {
+            margin-bottom: 40px;
+          }
+        }
+        a {
+          color: $secondary;
+          text-decoration: underline;
+        }
+        h5 {
+          margin-bottom: 25px;
+          @include mq("desktop") {
+            margin-bottom: 40px;
+          }
+          @include bodyText(1);
+        }
+      }
+      .news-image {
+        display: none;
+        @include mq("tablet") {
+          display: block;
+        }
+      }
+      blockquote {
+        margin: 0 0 25px -10%;
+        padding: 0;
+        padding-left: 20px;
+        border-left: 1px solid $red;
+        @include bodyText(2);
+        .name {
+          display: block;
+          margin-top: 20px;
+          @include bodyText(6);
+        }
+        @include mq("desktop") {
+          margin: 0 auto 40px 0;
+          padding-left: 55px;
+          width: 80%;
+          max-width: 760px;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+  #image-gallery {
+    .gallery-image img {
+      max-height: 180px;
+      @include mq("tablet") {
+        max-height: 300px;
+      }
+      @include mq("desktop") {
+        max-height: 550px;
+      }
+    }
+  }
+  .post-navigation {
+    .navigation-buttons {
+      margin-left: auto;
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 90%;
+      @include mq("tablet") {
+        margin-top: 80px;
+        width: 100%;
+      }
+      @include mq("desktop") {
+        margin-top: 110px;
+        width: calc((100% - 540px) * 0.8);
+        margin-left: auto;
+      }
+      a svg {
+        transition: all 0.3s ease-in-out;
+      }
+      .prev-post-link svg {
+        margin-right: 20px;
+        margin-left: 0;
+      }
+      .prev-post-link:hover svg {
+        margin-left: 0;
+        transform: translateX(-10px);
+      }
+      .next-post-link {
+        margin-left: auto;
+      }
+      .next-post-link:hover svg {
+        margin-left: 20px;
+        transform: translateX(10px);
+      }
+    }
+  }
+  .title-cta-module {
+    margin: 78px 0;
+    @include mq("tablet") {
+      margin: 150px 0 100px;
+    }
+    @include mq("desktop") {
+      margin: 200px 0 160px;
+    }
+    @include mq("desktop-ultra") {
+      margin: 250px 0 200px;
+    }
+  }
+  #related-news {
+    h3 {
+      margin-bottom: 30px;
+      @include mq("desktop-ultra") {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}

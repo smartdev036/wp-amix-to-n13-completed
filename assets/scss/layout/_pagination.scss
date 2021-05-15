@@ -1,0 +1,63 @@
+.pagination {
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  .btn-pagination {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    @include buttonText();
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &:hover {
+      .text {
+        color: $primary;
+      }
+      svg path {
+        stroke: $primary;
+      }
+    }
+    svg {
+      width: 30px;
+      transition: transform 0.3s ease-in-out;
+      will-change: transform;
+      path {
+        transition: stroke 0.3s ease-in-out;
+        will-change: stroke;
+      }
+      @include mq("desktop") {
+        width: 50px;
+      }
+    }
+    .text {
+      font-family: "Gotham", sans-serif;
+      padding: 0 9px;
+      color: $secondary;
+      transition: color 0.3s ease-in-out;
+      @include mq("tablet") {
+        padding: 0 22px;
+      }
+    }
+    &.prev:hover svg {
+      transform: translateX(-10px);
+    }
+    &.next:hover svg {
+      transform: translateX(10px);
+    }
+  }
+  .page-navigator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include captionText(large);
+  }
+}

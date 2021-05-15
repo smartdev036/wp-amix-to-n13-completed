@@ -1,0 +1,101 @@
+.page-template-donor {
+  .page-info {
+    max-width: 90%;
+    margin: 50px 0 80px auto;
+    @include mq("tablet") {
+      max-width: 100%;
+      margin: 80px 0 120px;
+    }
+    @include mq("desktop") {
+      margin: 110px 0 200px;
+    }
+    @include mq("desktop-ultra") {
+      margin: 150px 0 250px;
+    }
+    .container-fluid {
+      @include mq("tablet") {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+    }
+    &__left {
+      @include mq("tablet") {
+        max-width: 40%;
+      }
+      @include mq("desktop-ultra") {
+        max-width: 680px;
+      }
+      h3 {
+        margin-bottom: 11px;
+        @include mq("tablet") {
+          margin-bottom: 20px;
+        }
+        @include mq("desktop") {
+          margin-bottom: 38px;
+        }
+      }
+      p {
+        @include bodyText(1);
+      }
+    }
+    &__right {
+      margin-top: 25px;
+      @include mq("tablet") {
+        display: block;
+        margin-top: 0;
+        margin-left: 10px;
+        max-width: calc(60% - 10px);
+        flex-shrink: 0;
+      }
+      @include mq("desktop") {
+        margin-left: 20px;
+        max-width: calc(60% - 20px);
+      }
+      @include mq("desktop-ultra") {
+        margin-left: 30px;
+        max-width: 920px;
+      }
+    }
+  }
+  .title-cta-module {
+    margin-top: 70px;
+    margin-bottom: 80px;
+    @include mq("tablet") {
+      margin-top: 100px;
+      margin-bottom: 120px;
+    }
+    @include mq("desktop") {
+      margin-top: 150px;
+      margin-bottom: 200px;
+    }
+    @include mq("desktop-ultra") {
+      margin-top: 200px;
+      margin-bottom: 250px;
+    }
+  }
+  #news {
+    margin-bottom: 76px;
+    @include mq("tablet") {
+      margin-bottom: 100px;
+    }
+    @include mq("desktop") {
+      margin-bottom: 200px;
+    }
+    @include mq("desktop-ultra") {
+      margin-bottom: 240px;
+    }
+    h3 {
+      margin-bottom: 23px;
+      @include mq("tablet") {
+        margin-bottom: 50px;
+      }
+      @include mq("desktop") {
+        margin-bottom: 92px;
+      }
+    }
+    .news-module .news-excerpt {
+      display: none;
+    }
+  }
+}

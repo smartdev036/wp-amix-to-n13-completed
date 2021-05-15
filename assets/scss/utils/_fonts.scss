@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+// Gotham Font
+@font-face {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Gotham-Book.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gotham";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/GothamBook-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Gotham-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gotham";
+  font-style: italic;
+  font-weight: 500;
+  src: url("../fonts/GothamMedium-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/GothamBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gotham";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/Gotham-BoldItalic.otf") format("opentype");
+}
+// Avenir
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
+}

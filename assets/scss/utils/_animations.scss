@@ -1,0 +1,11 @@
+@keyframes bounceUpDown {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 25px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
